@@ -72,7 +72,7 @@ function auto_add_alt_tags_to_images($content) {
   }
 
   $plugin_slug = plugin_basename(__FILE__);
-  $github_url = 'https://api.github.com/repos/hassan7303/Persian-to-english-number-converter/releases/latest';
+  $github_url = 'https://api.github.com/repos/hassan7303/Auto-filling-alt-tag-for-images/releases/latest';
 
   $response = wp_remote_get($github_url, ['sslverify' => false]);
   if (is_wp_error($response)) {
@@ -88,7 +88,7 @@ function auto_add_alt_tags_to_images($content) {
               'slug' => $plugin_slug,
               'new_version' => $new_version,
               'package' => $release_info['zipball_url'],
-              'url' => 'https://github.com/hassan7303/Persian-to-english-number-converter',
+              'url' => 'https://github.com/hassan7303/Auto-filling-alt-tag-for-images',
           ];
       }
   }
@@ -103,7 +103,7 @@ add_filter('pre_set_site_transient_update_plugins', 'check_for_plugin_update');
 function fix_plugin_folder_name($response, $hook_extra, $result) {
   global $wp_filesystem;
 
-  $plugin_slug = 'Persian-to-english-number-converter';
+  $plugin_slug = 'Auto-filling-alt-tag-for-images';
   $original_folder = WP_PLUGIN_DIR . '/' . $plugin_slug;
   $new_folder = $result['destination'];
 
